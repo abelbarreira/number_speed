@@ -1,7 +1,8 @@
 import random
 
 MIN_NUMBER_VALUE:int = 0
-MAX_NUMBER_VALUE:int = 80
+MAX_NUMBER_VALUE:int = 60
+TRIPLETS_NUMBER:int = 20
 
 def generate_random_number(min_value, max_value):
     return random.randint(min_value, max_value)
@@ -82,21 +83,31 @@ def calculate_further_from_remaining(a, b, c):
     else:
         return highest
 
-# Generate a new valid triplet
-a, b, c = generate_triplet(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE)
-while validate_triplet(a, b, c) is False:
+# Generate a list of triplets
+triplet_list = []
+i = 0
+while i < TRIPLETS_NUMBER:
+    # Generate a valid triple
     a, b, c = generate_triplet(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE)
+    while validate_triplet(a, b, c) is False:
+        a, b, c = generate_triplet(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE)
 
-print(f"a: {a}, b: {b}, c: {c}")
+    # Add up to the list
+    triplet_list = triplet_list + [a, b, c]
+    i = i + 1
 
-lowest = get_lowest(a, b, c)
-print(f"lowest: {lowest}")
+# Print triplets
+print("\nTriplets")
+i = 0
+while i < TRIPLETS_NUMBER:
+    print(f"{i+1:02d}: {triplet_list[i*3]:02d}   {triplet_list[i*3+1]:02d}   {triplet_list[i*3+2]:02d}")
+    i = i + 1
 
-highest = get_highest(a, b, c)
-print(f"highest: {highest}")
-
-remaining = get_remaining(a, b, c)
-print(f"remaining: {remaining}")
-
-further = calculate_further_from_remaining(a, b, c)
-print(f"further: {further}")
+# Print furthers
+print("\nFurthers")
+i = 0
+while i < TRIPLETS_NUMBER:
+    # Calculate further
+    further = calculate_further_from_remaining(triplet_list[i*3], triplet_list[i*3+1], triplet_list[i*3+2])
+    print(f"{i+1:02d}: {further:02d}")
+    i = i + 1
