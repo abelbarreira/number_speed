@@ -1,8 +1,8 @@
 import random
 
 MIN_NUMBER_VALUE:int = 0
-MAX_NUMBER_VALUE:int = 60
-TRIPLETS_NUMBER:int = 20
+MAX_NUMBER_VALUE:int = 50
+TRIPLETS_NUMBER:int = 40
 
 def generate_random_number(min_value, max_value):
     return random.randint(min_value, max_value)
