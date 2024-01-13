@@ -96,15 +96,18 @@ while i < TRIPLETS_NUMBER:
     triplet_list = triplet_list + [a, b, c]
     i = i + 1
 
+# Title
+print("# Number Speed and Accuracy\n")
+
 # Print triplets
-print("\nTriplets")
+print("## Test\n")
 i = 0
 while i < TRIPLETS_NUMBER:
-    print(f"{i+1:02d}: {triplet_list[i*3]:02d}   {triplet_list[i*3+1]:02d}   {triplet_list[i*3+2]:02d}")
+    print(f"{i+1:02d}: {triplet_list[i*3]:02d}   {triplet_list[i*3+1]:02d}   {triplet_list[i*3+2]:02d}\n>\n")
     i = i + 1
 
 # Print furthers
-print("\nFurthers")
+print("## Solutions\n")
 i = 0
 while i < TRIPLETS_NUMBER:
     # Calculate further
