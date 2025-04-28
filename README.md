@@ -1,6 +1,6 @@
 # Number Speed
 
-[![MadeWithPy](https://forthebadge.com/images/badges/made-with-python.svg)](https://github.com/abelbarreira)
+[![Python](https://img.shields.io/badge/python-3-yellow)](https://www.python.org/downloads/release/python-31012/)
 ![License](https://img.shields.io/github/license/abelbarreira/number_speed)
 
 Basic python script to generate **Number Speed and Accuracy** test examples as for [Thomas International General Intelligence Assessment (GIA)](https://www.thomas.co/assessments/general-intelligence-assessment-gia).
